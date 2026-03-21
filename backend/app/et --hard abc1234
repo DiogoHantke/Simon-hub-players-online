@@ -1,5 +1,0 @@
-[33me990694[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{0}: pull --rebase origin main (finish): returning to refs/heads/main
-[33me990694[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m HEAD@{1}: pull --rebase origin main (pick): Atualiza layout e ranking com toggle e centralização
-[33m64674a4[m HEAD@{2}: pull --rebase origin main (start): checkout 64674a4098ccef81f8323577e556917c628d927d
-[33md3f82ca[m HEAD@{3}: Branch: renamed refs/heads/master to refs/heads/main
-[33md3f82ca[m HEAD@{5}: commit (initial): Atualiza layout e ranking com toggle e centralização
