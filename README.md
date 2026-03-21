@@ -8,6 +8,8 @@ para cadastro de jogadores e armazenamento de pontuações. O site recebe as pon
 do Simon (Arduino/ESP8266) e mantém um ranking atualizado.
 </p>
 
+<img src="assets/screenshot_site.png" width="100%" alt="Interface do Simon Hub Players Online">
+
 <hr>
 
 <h2>Participantes do Projeto</h2>
