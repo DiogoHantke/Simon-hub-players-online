@@ -1,4 +1,4 @@
-<img src="assets/banner_projeto.png" width="100%" alt="banner_projeto.png">
+<img src="assets/banner.png" width="100%" alt="banner_projeto.png">
 
 <h1>Simon Hub Players Online</h1>
 
