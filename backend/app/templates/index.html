@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub de Jogadores</title>
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<div class="page-container">
+    <div class="app-container">
+        <header>
+            <h1>Hub de Jogadores</h1>
+            <p>Envie seu nome e veja o ranking!</p>
+            <!-- Label para mensagens e jogadores pendentes -->
+            <div id="messageLabel"></div>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <input type="text" id="usernameInput" placeholder="Digite seu nome">
+                <button id="submitBtn">Enviar Nome</button>
+                <button id="listBtn">Ranking</button>
+            </div>
+        </main>
+    </div>
+
+    <div class="ranking-container" id="rankingContainer">
+        <h2>Ranking</h2>
+        <ul id="rankingList"></ul>
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
