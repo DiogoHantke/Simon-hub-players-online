@@ -1,6 +1,6 @@
 <img src="assets/banner_projeto.png" width="100%" alt="banner_projeto.png">
 
-<h1>Simon Game Ranking System</h1>
+<h1>Simon Hub Players Online</h1>
 
 <p>
 Projeto desenvolvido como extensão do clássico <strong>Arduino Simon Game</strong>, agora com integração web
