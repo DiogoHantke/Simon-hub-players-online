@@ -84,7 +84,7 @@ async function checkPending() {
         const response = await fetch('/search');
         const data = await response.json();
         if (data.pending && data.pending.length > 0) {
-            messageLabel.textContent = 'Digite o nome do jogador!';
+            messageLabel.textContent = 'Jogador pendente !!!';
             messageLabel.style.color = 'red';
             if (!blinkInterval) {
                 blinkInterval = setInterval(() => {
