@@ -1,3 +1,4 @@
+/* Reset e estilo base */
 * {
     margin: 0;
     padding: 0;
@@ -6,27 +7,22 @@
 }
 
 body {
-    background: #121212;
+    background: #121212; /* dark mode */
     color: #e0e0e0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    height: 100vh;
 }
 
 .page-container {
-    width: 100%;
     display: flex;
-    justify-content: center;
-}
-
-.main-content {
-    display: flex;
+    flex-direction: column;
     gap: 20px;
-    align-items: flex-start;
+    align-items: center;
 }
 
+/* Container principal */
 .app-container {
     background: #1e1e1e;
     padding: 30px;
@@ -107,12 +103,13 @@ button {
     background: #3ac16c;
 }
 
+/* Ranking */
 .ranking-container {
     background: #1e1e1e;
     padding: 20px;
     border-radius: 15px;
     width: 300px;
-    display: none;
+    display: none; /* inicialmente escondido */
     flex-direction: column;
     gap: 10px;
     max-height: 400px;
@@ -137,31 +134,12 @@ button {
     border-radius: 8px;
     background: #2b2b2b;
     margin-bottom: 6px;
-    text-align: left;
+    text-align: center;
     font-weight: 500;
     color: #e0e0e0;
     transition: background 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
 
 .ranking-container li:hover {
     background: #007bff33;
-}
-
-.ranking-container li.first-place {
-    color: gold;
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.ranking-container li.second-place {
-    color: silver;
-    font-weight: bold;
-}
-
-.ranking-container li.third-place {
-    color: #cd7f32;
-    font-weight: bold;
 }

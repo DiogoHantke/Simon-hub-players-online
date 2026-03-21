@@ -7,6 +7,7 @@ const rankingList = document.getElementById('rankingList');
 
 let blinkInterval = null;
 
+// Envia o nome
 async function sendUsername() {
     const username = input.value.trim();
     if (!username) {
@@ -14,6 +15,7 @@ async function sendUsername() {
         messageLabel.style.color = 'red';
         return;
     }
+
     try {
         const response = await fetch('/username', {
             method: 'POST',
@@ -21,11 +23,14 @@ async function sendUsername() {
             body: JSON.stringify({username})
         });
         const data = await response.json();
+
         if (data.status === 'ok') {
             messageLabel.textContent = 'Nome enviado com sucesso!';
             messageLabel.style.color = 'lime';
             input.value = '';
+            rankingContainer.style.display = 'none';
             rankingList.innerHTML = '';
+
             if (blinkInterval) {
                 clearInterval(blinkInterval);
                 blinkInterval = null;
@@ -39,53 +44,66 @@ async function sendUsername() {
         messageLabel.textContent = 'Falha na conexão!';
         messageLabel.style.color = 'red';
     }
+
     setTimeout(() => messageLabel.textContent = '', 3000);
 }
 
 submitBtn.addEventListener('click', sendUsername);
-input.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendUsername(); });
 
+input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') sendUsername();
+});
+
+// Ranking + PDF
 listBtn.addEventListener('click', async () => {
-    if (rankingContainer.style.display === 'flex') {
-        rankingContainer.style.display = 'none';
-        return;
-    }
     try {
         const response = await fetch('/ranking');
         const data = await response.json();
+
         rankingList.innerHTML = '';
-        data.forEach((player, index) => {
+        data.forEach(player => {
             const li = document.createElement('li');
-            const name = player.username ?? 'Pending';
-            const score = player.score ?? 0;
-            if (index === 0) {
-                li.textContent = `🏆 ${index + 1}. ${name} - ${score} pts`;
-                li.classList.add('first-place');
-            } else if (index === 1) {
-                li.textContent = `🥈 ${index + 1}. ${name} - ${score} pts`;
-                li.classList.add('second-place');
-            } else if (index === 2) {
-                li.textContent = `🥉 ${index + 1}. ${name} - ${score} pts`;
-                li.classList.add('third-place');
-            } else {
-                li.textContent = `${index + 1}. ${name} - ${score} pts`;
-            }
+            li.textContent = `${player.username ?? 'Pending'} - ${player.score}`;
             rankingList.appendChild(li);
         });
+
         rankingContainer.style.display = 'flex';
+
+        // === Gerar PDF ===
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.setFontSize(18);
+        doc.text("Ranking de Jogadores", 105, 20, null, null, "center");
+        doc.setFontSize(12);
+
+        let y = 40;
+        data.forEach((player, index) => {
+            const name = player.username ?? 'Pending';
+            const score = player.score ?? 0;
+            doc.text(`${index + 1}. ${name} - ${score} pts`, 20, y);
+            y += 10;
+        });
+
+        // Download automático
+        doc.save('ranking.pdf');
+
     } catch {
         messageLabel.textContent = 'Erro ao buscar ranking';
         messageLabel.style.color = 'red';
     }
 });
 
+// Checa jogadores pendentes
 async function checkPending() {
     try {
         const response = await fetch('/search');
         const data = await response.json();
+
         if (data.pending && data.pending.length > 0) {
             messageLabel.textContent = 'Digite o nome do jogador!';
             messageLabel.style.color = 'red';
+
             if (!blinkInterval) {
                 blinkInterval = setInterval(() => {
                     messageLabel.style.visibility =
