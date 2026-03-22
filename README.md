@@ -205,8 +205,6 @@ baseadas em rede.
 </ul>
 
 <hr>
-
-<hr>
 <h2 id="codigo">Explicação Detalhada do Código</h2>
 <h3>main.py</h3>
 <p>Responsável por inicializar Flask, criar tabelas e definir rotas do sistema:</p>
