@@ -3,7 +3,8 @@
 <h1>Simon Hub Players Online</h1>
 
 <p>
-Projeto desenvolvido como extensão do clássico <strong>Arduino Simon Game</strong>, agora com integração web
+Projeto desenvolvido como extensão do clássico <strong>Arduino Simon Game</strong>, presente no repositório <a href = 'https://github.com/DiogoHantke/Jogo-simon-ATMEGA328p'>
+Simon-memory-game-ATMEGA328p </a> agora com integração web
 para cadastro de jogadores e armazenamento de pontuações. O site recebe as pontuações enviadas pelo firmware
 do Simon (Arduino/ESP8266) e mantém um ranking atualizado.
 </p>
