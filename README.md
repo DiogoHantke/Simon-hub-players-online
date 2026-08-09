@@ -35,21 +35,8 @@ baseadas em rede.
 
 <h2>Participantes do Projeto</h2>
 <ul>
-    <li>Aparecido Orlando Virgili Neto</li>
-    <li>Breno Souza Bernardi</li>
-    <li>Bruno Travagli Sereço</li>
-    <li>Daniel Lourenço Chereze Aparecida</li>
-    <li>Diego Martins de Aquino</li>
     <li>Diogo Hantke Rodrigues Garcia</li>
     <li>Leticia Polatto de Novaes</li>
-    <li>Luiz dos Santos Menino Neto</li>
-    <li>Naiane Garcia da Silva</li>
-    <li>Pedro Henrique Fuzaro Mori</li>
-    <li>Rafael Rebolo Belarmino</li>
-    <li>Samara Hélem Fonseca</li>
-    <li>Thiago Augusto Savenhago</li>
-    <li>Vinícius Souza Cardozo</li>
-    <li>Wesley Mateus Basso</li>
 </ul>
 
 <hr>
